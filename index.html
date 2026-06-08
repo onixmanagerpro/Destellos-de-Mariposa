@@ -6,6 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Destellos de Mariposa — Estética profesional especializada en pestañas, micropigmentación y tratamientos de belleza.">
   <title>Destellos de Mariposa | Estética & Belleza</title>
+
+  <!-- ── SEO ── -->
+  <meta name="keywords" content="extensiones de pestañas, micropigmentación, lifting de pestañas, laminado de cejas, tinte pestañas, estética profesional, belleza, Jessica Marisol, Destellos de Mariposa">
+  <meta name="author" content="Destellos de Mariposa · Jessica Marisol">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0C0709">
+  <link rel="canonical" href="https://destellosdemariposa.es/"><!-- Actualiza con tu dominio real -->
+
+  <!-- ── Open Graph · WhatsApp · Facebook · Instagram ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://destellosdemariposa.es/"><!-- Actualiza con tu dominio real -->
+  <meta property="og:site_name" content="Destellos de Mariposa">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Destellos de Mariposa | Estética & Belleza">
+  <meta property="og:description" content="Estética profesional especializada en pestañas, micropigmentación y tratamientos de belleza. By Jessica Marisol. Reserva tu cita ahora.">
+  <meta property="og:image" content="https://destellosdemariposa.es/logo_mariposas.png"><!-- Actualiza con tu dominio real -->
+  <meta property="og:image:alt" content="Destellos de Mariposa — Estética & Belleza">
+
+  <!-- ── Twitter / X Card ── -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Destellos de Mariposa | Estética & Belleza">
+  <meta name="twitter:description" content="Estética profesional especializada en pestañas, micropigmentación y tratamientos de belleza. By Jessica Marisol.">
+  <meta name="twitter:image" content="https://destellosdemariposa.es/logo_mariposas.png"><!-- Actualiza con tu dominio real -->
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" type="image/png" href="logo_mariposas.png">
@@ -1801,6 +1825,28 @@
     const url = `https://wa.me/34653703258?text=${encodeURIComponent(txt)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   });
+
+  // ── FAVICON CIRCULAR ──
+  (function() {
+    const img = new Image();
+    img.onload = function() {
+      const size = 64;
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+      ctx.clip();
+      const min = Math.min(img.width, img.height);
+      const sx = (img.width - min) / 2;
+      const sy = (img.height - min) / 2;
+      ctx.drawImage(img, sx, sy, min, min, 0, 0, size, size);
+      const link = document.querySelector('link[rel="icon"]');
+      if (link) link.href = canvas.toDataURL('image/png');
+    };
+    img.src = 'logo_mariposas.png';
+  })();
 </script>
 </body>
 </html>
