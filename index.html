@@ -1090,6 +1090,14 @@
     .gallery-card:hover .gallery-card-bg {
       background: linear-gradient(135deg, rgba(194,123,160,0.25) 0%, rgba(201,169,110,0.2) 100%);
     }
+    .gallery-card-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .gallery-card-icon { font-size: 2rem; color: var(--pink); opacity: 0.6; }
     .gallery-card-label {
       font-family: 'Cormorant Garamond', serif;
@@ -1513,68 +1521,76 @@
     <button class="carousel-arrow left" onclick="scrollCarousel('galleryTrack',-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
     <div class="carousel-track" id="galleryTrack">
 
+      <!-- LIFTING 1 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-eye gallery-card-icon"></i>
-          <span class="gallery-card-label">Cejas micropigmentadas</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/lifting-1.jpg" alt="Lifting de pestañas" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Pelo a pelo</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Lifting</span></div>
       </div>
 
+      <!-- LIFTING 2 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-feather-alt gallery-card-icon"></i>
-          <span class="gallery-card-label">Extensiones 3D/4D</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/lifting-2.jpg" alt="Lifting de pestañas" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Volumen</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Lifting</span></div>
       </div>
 
+      <!-- MICROPIGMENTACIÓN 1 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-heart gallery-card-icon"></i>
-          <span class="gallery-card-label">Labios aquarela</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/micropig-1.jpg" alt="Cejas micropigmentadas pelo a pelo" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Premium</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Cejas · Pelo a pelo</span></div>
       </div>
 
+      <!-- MICROPIGMENTACIÓN 2 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-leaf gallery-card-icon"></i>
-          <span class="gallery-card-label">Lifting de pestañas</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/micropig-2.jpg" alt="Cejas micropigmentadas polvo" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Natural</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Cejas · Polvo</span></div>
       </div>
 
+      <!-- MICROPIGMENTACIÓN 3 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-star gallery-card-icon"></i>
-          <span class="gallery-card-label">Wispy / Anime</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/micropig-3.jpg" alt="Labios micropigmentados" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Glamour</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Labios</span></div>
       </div>
 
+      <!-- MICROPIGMENTACIÓN 4 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-wind gallery-card-icon"></i>
-          <span class="gallery-card-label">Laminado de cejas</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/micropig-4.jpg" alt="Micropigmentación ojos intralash" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Peinado</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Intralash · Ojos</span></div>
       </div>
 
+      <!-- EXTENSIÓN 1 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-draw-polygon gallery-card-icon"></i>
-          <span class="gallery-card-label">Intralash · Ojos</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/extension-1.jpg" alt="Extensiones clásicas" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Sombra</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Extensión · Clásicas</span></div>
       </div>
 
+      <!-- EXTENSIÓN 2 — reemplaza la URL con tu enlace de Cloudinary -->
       <div class="gallery-card">
         <div class="gallery-card-bg">
-          <i class="fas fa-brush gallery-card-icon"></i>
-          <span class="gallery-card-label">Cejas polvo</span>
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/extension-2.jpg" alt="Extensiones 3D/4D" loading="lazy">
         </div>
-        <div class="gallery-overlay"><span class="gallery-tag">Técnica</span></div>
+        <div class="gallery-overlay"><span class="gallery-tag">Extensión · 3D/4D</span></div>
+      </div>
+
+      <!-- EXTENSIÓN 3 — reemplaza la URL con tu enlace de Cloudinary -->
+      <div class="gallery-card">
+        <div class="gallery-card-bg">
+          <img src="https://res.cloudinary.com/TU_CLOUD/image/upload/extension-3.jpg" alt="Extensiones volumen" loading="lazy">
+        </div>
+        <div class="gallery-overlay"><span class="gallery-tag">Extensión · Volumen +</span></div>
       </div>
 
     </div>
