@@ -1187,6 +1187,24 @@
       .about-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .hero-ring { display: none; }
     }
+
+    /* ─── GALLERY AUTO-SCROLL ─── */
+    #galleryWrapper { overflow: hidden; }
+    #galleryWrapper .carousel-arrow { display: none !important; }
+    .gallery-auto {
+      overflow: visible !important;
+      scroll-snap-type: none !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: max-content !important;
+      animation: galleryAutoScroll 32s linear infinite;
+      will-change: transform;
+    }
+    .gallery-auto:hover { animation-play-state: paused; }
+    @keyframes galleryAutoScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(var(--gallery-end, -33%)); }
+    }
   </style>
 </head>
 <body>
@@ -1517,7 +1535,7 @@
     <div class="section-label">Portafolio</div>
     <h2 class="section-title">Galería de <em>trabajos</em></h2>
   </div>
-  <div class="carousel-wrapper">
+  <div class="carousel-wrapper" id="galleryWrapper">
     <button class="carousel-arrow left" onclick="scrollCarousel('galleryTrack',-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
     <div class="carousel-track" id="galleryTrack">
 
@@ -1841,6 +1859,26 @@
     const url = `https://wa.me/34653703258?text=${encodeURIComponent(txt)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   });
+
+  // ── GALLERY AUTO-SCROLL ──
+  (function() {
+    var track = document.getElementById('galleryTrack');
+    if (!track) return;
+    var origCards = Array.from(track.querySelectorAll('.gallery-card'));
+    for (var i = 0; i < 2; i++) {
+      origCards.forEach(function(card) { track.appendChild(card.cloneNode(true)); });
+    }
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        var allCards = track.querySelectorAll('.gallery-card');
+        if (allCards.length < 2) return;
+        var step = allCards[1].getBoundingClientRect().left - allCards[0].getBoundingClientRect().left;
+        var oneSet = Math.round(step * origCards.length);
+        track.style.setProperty('--gallery-end', '-' + oneSet + 'px');
+        track.classList.add('gallery-auto');
+      });
+    });
+  })();
 
   // ── FAVICON CIRCULAR ──
   (function() {
